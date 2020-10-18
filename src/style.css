@@ -1,0 +1,201 @@
+@font-face {
+    font-family: "DungGeunMo";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: "DungGeunMo";
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    width: 600px;
+    height: 600px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3b3d3f;
+    position: relative;
+}
+
+.calculator .btns {
+    position: absolute;
+    top: 18px;
+    left: 35px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.calculator .btns div {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #f9ca24;
+}
+
+.calculator .btns div:first-child {
+    background-color: #eb4d4b;
+}
+
+.calculator .btns div:last-child {
+    background-color: #6ab04c;
+}
+
+.calculator .btns div:hover {
+    opacity: 0.8;
+}
+
+
+.container {
+    width: 90%;
+    display: grid;
+    font-size: 32px;
+    grid-template-rows: repeat(5, 100px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "result result result clear"
+        "number-7 number-8 number-9 operator-plus "
+        "number-4 number-5 number-6 operator-minus"
+        "number-1 number-2 number-3 operator-multi"
+        "number-0 number-0 operator-equal operator-devide";
+
+}
+
+@keyframes BtnClick {
+    from {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1.0);
+    }
+}
+
+.cal-btn {
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.cal-btn:hover {
+    opacity: 0.8;
+}
+
+.cal-btn:active {
+    animation: BtnClick 0.1s linear;
+}
+
+.number {
+    background-color: #5c5d5f;
+}
+
+
+.number-0 {
+    grid-area: number-0;
+}
+
+.number-1 {
+    grid-area: number-1;
+}
+
+.number-2 {
+    grid-area: number-2;
+}
+
+.number-3 {
+    grid-area: number-3;
+}
+
+.number-4 {
+    grid-area: number-4;
+}
+
+.number-5 {
+    grid-area: number-5;
+}
+
+.number-6 {
+    grid-area: number-6;
+}
+
+.number-7 {
+    grid-area: number-7;
+}
+
+.number-8 {
+    grid-area: number-8;
+}
+
+.number-9 {
+    grid-area: number-9;
+}
+
+.operator {
+    background-color: #818181;
+}
+
+.operator-plus {
+    grid-area: operator-plus;
+}
+
+.operator-minus {
+    grid-area: operator-minus;
+}
+
+.operator-multi {
+    grid-area: operator-multi;
+}
+
+.operator-devide {
+    grid-area: operator-devide;
+}
+
+.operator-equal {
+    grid-area: operator-equal;
+    background-color: #ee542c;
+}
+
+.clear {
+
+    background-color: #a7aab0;
+    grid-area: clear;
+}
+
+.result {
+    color: #000;
+    background-color: #a1bd66;
+    border-radius: 0px;
+    flex-direction: column;
+    cursor: auto;
+    align-items: flex-end;
+    grid-area: result;
+    font-size: 48px;
+    padding-right: 30px;
+}
+
+.result .expression {
+    color: #000;
+    font-size: 28px;
+}
