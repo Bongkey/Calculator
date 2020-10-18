@@ -36,10 +36,16 @@ function operatorBtnHandler(event) {
         attachedStr = attachedStr.substring(0,attachedStr.length-1)
     }
     if (operator === "=") {
-        result = eval(attachedStr).toFixed(13);
+        result = eval(attachedStr);
+        if(isNaN(result) == false && Number.isInteger(result)==false) {
+            result = result.toFixed(10);
+        }
         resultDiv.innerText = result;
     } else if (preOperator === operator) {
-        result = eval(attachedStr).toFixed(13);
+        result = eval(attachedStr);
+        if(isNaN(result) == false && Number.isInteger(result)==false) {
+            result = result.toFixed(10);
+        }
         attachedStr += operator;
         resultDiv.innerText = result;
     } else {
